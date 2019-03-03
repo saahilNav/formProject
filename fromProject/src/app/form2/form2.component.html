@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="signUpform" (ngSubmit)="postData(signUpform)">
+    <div class="form-group">
+<input  type="text" formControlName='fname' placeholder="firstname">
+</div>
+
+<div class="form-group">
+<input type="text" formControlName='lname' placeholder="lstname">
+</div>
+
+<div class="form-group">
+<input  type="text" formControlName='password'  placeholder="password yor"   >
+</div><br>
+
+<input type="submit" class="btn btn-success" value="Post data"  [disabled]="!signUpform.valid"> Submit Data
+</form>
+</div>

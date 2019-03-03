@@ -1,0 +1,34 @@
+<p>
+  form works!
+</p>
+<div class="container">
+  <form #regForm='ngForm' (ngSubmit)="Register(regForm)">
+    <div class="form-group">
+      <label for="firstname">Firstname</label>
+<input required  type="text"  name="firstname" id="firstname" #fname="ngModel"  class="form-control" ngModel>
+<div *ngIf="!fname.valid && fname.touch" class= "alert alert-danger"> 
+  <div *ngIf="fname.errors.required"> please fil name</div>
+</div>
+<div > please fill minimum 5 words</div>
+</div>
+
+
+<div class="form-group">
+    <label for="password">password</label>
+<input required type="text" ngModel name="password" id="password" class="form-control" #fpass="ngModel" >
+</div>
+
+
+<div class="form-group">
+  <label for="email">email</label>
+<input required type="text" ngModel name="email" email  class="form-control"  #email="ngModel" >
+<span class="help-bpx" *ngIf="email.touched && !email.valid"> please enter valid email</span>
+</div><br>
+
+<div><input type="submit" class="btn btn-success" [disabled]="!regForm.valid"> Submit Data</div>
+</form>
+</div>
+<div>{{firstname}}
+  {{password}}
+  {{email}}
+</div>
